@@ -394,12 +394,27 @@ ul.pagination li a:hover {
 
 @media (max-width: 768px) {
 
+	.header-first{
+		flex-direction: column;	
+		height:auto;	
+	}
+
+	.header-first .picture-left{
+		width: 100%;
+		min-height: 50vh;		
+	}	
+
+	.header-first .picture-right,
+	.header-first .picture-left{
+		width: 100%;
+		height: calc(100vh - 90px -180px);
+		
+	}
 
 	.right-box{	
 		margin-left: 0px;
 		padding: 24px;
-		padding-top: 20vw;
-		padding-bottom: 20vw;
+
 	}
 	.picture-right h2 {
 		font-size: clamp(52px, 5vw, 120px);
@@ -409,16 +424,19 @@ ul.pagination li a:hover {
 		font-size: clamp(28px, 5vw, 28px);
 	}
 	.header-second{
+		flex-direction: column;
+		height:auto;
 		width: 100%;
 		gap: 0px;
 	}
 
 	.header-second .picture-left{
-		width: 50%;		
+		width: 100%;
+		min-height: 50vh;		
 	}	
 	
 	.header-second .right-article{		
-		width: 50%;
+		width: 100%;
 		padding-top: 0px;
 		padding-bottom: 0px;
 		padding: 24px;
