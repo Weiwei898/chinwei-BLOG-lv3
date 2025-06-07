@@ -113,7 +113,7 @@ a{
 	display:flex;
 	/*flex-direction:row;主軸橫向由左到右預設值可不寫*/	
 	/*margin: 0 auto;區塊元素水平置中*/
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	justify-content:center;/*主軸線置中*/
 	flex-wrap: wrap;/*元件多行*/
@@ -396,12 +396,12 @@ ul.pagination li a:hover {
 
 	.header-first{
 		flex-direction: column;	
-		height:auto;	
+		height:auto;
 	}
 
 	.header-first .picture-left{
 		width: 100%;
-		min-height: 50vh;		
+		aspect-ratio: 1 / 1;		
 	}	
 
 	.header-first .picture-right,
@@ -416,6 +416,7 @@ ul.pagination li a:hover {
 		padding: 24px;
 
 	}
+
 	.picture-right h2 {
 		font-size: clamp(52px, 5vw, 120px);
 	
@@ -432,7 +433,7 @@ ul.pagination li a:hover {
 
 	.header-second .picture-left{
 		width: 100%;
-		min-height: 50vh;		
+		aspect-ratio: 1 / 1;		
 	}	
 	
 	.header-second .right-article{		
@@ -488,32 +489,30 @@ ul.pagination li a:hover {
 
 @media(max-width:375px) {
 
-	/*
-	.header{
-		滿版測試
-		height: 100vx -78px -659px;
-	}*/
+	.header-first{
+		flex-direction: column;	
+		height:auto;	
+	}
 
+	.header-first .picture-left{
+		width: 100%;
+		aspect-ratio: 1 / 1;
+	}
 	.header-first .picture-left,
 	.header-first .picture-right {
-		width: 100%;		
+		width: 100%;
+		height: calc(100vh - 90px -180px);		
 	}
 
-	.header-first{
-		height: auto;
-		flex-direction:column;
-		
-	}
+
 	.right-box{
 		margin-left: 0px;
 		padding: 24px;
 	}
 	
 	.header-first .picture-right{
-		height: calc(100vh - 654px);
 		background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-web-camp/mobile/index/Hero%20Section2.png?raw=true');
 		}
-	
 
 	.picture-right h2 {
 		font-size: clamp(52px, 5vw, 120px);
@@ -525,10 +524,8 @@ ul.pagination li a:hover {
 
 	/*控制圖片  vh=螢幕可視範圍高度的百分比*/
 	.header-first .picture-left {
-			height: calc(100vh - 459px);
 			background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-web-camp/mobile/index/Hero%20Section.png?raw=true');
 		}
-
 	.header-second{
 		width: 100%;
 		height: auto;
@@ -537,7 +534,7 @@ ul.pagination li a:hover {
 
 	.header-second .picture-left{
 		width: 100%;
-		height: 375px;
+		aspect-ratio: 1 / 1;
 		background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-web-camp/mobile/blog/About%20Section.png?raw=true');
 	}
 
