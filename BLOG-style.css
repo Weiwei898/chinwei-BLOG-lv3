@@ -358,6 +358,10 @@ a{
         display: none;
 	}
 
+    .footer-rights{
+        border: solid 1px black;
+    }
+
     .right-article .hashtag{
         font-size: clamp(24px, 5vw, 120px);
     }
