@@ -55,7 +55,7 @@ table {
 /*改變所有盒模型計算方式，不會改變原有大小*/
 *,*::before,*::after{
     box-sizing: border-box;
-    outline: solid 1px;/*測試範圍用*/
+    /*outline: solid 1px;測試範圍用*/
 }
 
 /*引入字型*/
@@ -97,8 +97,6 @@ a{
 	gap: 40px;
 }
 
-
-
 .index .nav-link {
 	text-decoration: none;/*去連結底線*/
   	font-size: 28px;
@@ -133,14 +131,12 @@ a{
 .right-text{
     display: flex;
     flex-direction:column;/*主軸垂直由上到下*/
-    gap: 4px;
+    gap: 16px;
 }
-
 
 .right-article .hashtag{
     font-size: 24px;
-    color: #0027D5;
-    
+    color: #0027D5;    
 }
 
 .hashtag-body{
@@ -163,30 +159,29 @@ a{
 }
 
 .container {
-	max-width: 636px;/*最大寬度*/
+    width: 636px;
 	margin: 0 auto;/*區塊元素水平置中*/
 	display: flex;
     flex-direction:column;
 	justify-content: center;/*主軸置中*/
 	flex-wrap: wrap;/*元件多行*/
-    padding-top: 80px;
-    padding-bottom: 80px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    gap: 24px;
 }
 
-.container .text{
-    padding-top: 12px;  
-}
 
 .article-layout{
-padding-bottom: 48px;
+    display: flex;
+    flex-direction:column;/*主軸垂直由上到下*/   
+    gap: 24px;
 }
 
 .article{
     width: 100%;
     display: flex;
 	flex-direction:column;/*主軸垂直由上到下*/
-    gap: 24px;
-    padding-bottom: 48px;
+    gap: 24px;    
 }
 
 .article-picture img{
@@ -194,11 +189,18 @@ padding-bottom: 48px;
     aspect-ratio: 2 / 1;
 }
 
-
 .title{
     font-weight: 700;/*字重*/
     font-size: 28px;
     color: #0027D5;
+}
+
+.article .title{
+    padding-bottom: 12px;
+}
+
+.article .text{
+    padding-bottom: 12px;
 }
 
 .subtitle{
@@ -208,30 +210,28 @@ padding-bottom: 48px;
     padding-bottom: 12px;
 }
 
-.text{
-    padding-top: 8px;
-    
-}
-
 .article-layout .method-ol{
     list-style:decimal;
     margin-left: 1em;
+    padding-bottom: 12px;
 }
 
 .article-layout .method-ul{
     list-style:disc;
     margin-left: 1.5em;
+    padding-bottom: 12px;
 }
 
 .page-button{
     display: flex;
     justify-content:space-between;
+    
 }
 
 .button-page{
     padding:8px 16px;/*按鈕長寬*/
     border-radius: 40px;/*圓角*/
-    border: 1px;
+    border: solid 1px;
     background: white;
 }
 .summary{ 
@@ -271,4 +271,111 @@ padding-bottom: 48px;
 	padding-bottom: 24px;
 }
 
+/*響應式設計*/
 
+@media (max-width: 768px){
+    .header{
+        width: 100%;
+        flex-direction:column;
+    }
+
+    .picture-left{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .header .right-article{
+        display: block;
+        width: 100%;
+        padding-top: 0px;
+	    padding-bottom: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+       
+    }
+
+    .container{
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+   
+    .footer-link{
+		justify-content:space-around;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+    .right-article .hashtag{
+        font-size: clamp(24px, 5vw, 120px);
+    }
+
+    .right-article .title{
+        font-size: clamp(28px, 5vw, 120px);
+    }
+
+    .title{
+        font-size: clamp(28px, 5vw, 120px); 
+    }
+    
+    .subtitle{
+        font-size: clamp(20px, 5vw, 120px);
+    }
+
+    .alysewang-mail{
+	    font-size: clamp(16px, 5vw, 28px);
+    }
+
+}
+
+@media(max-width:375px) {
+    .header{
+        width: 100%;
+        flex-direction:column;
+    }
+
+    .picture-left{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .header .right-article{
+        width: 100%;
+        display: block;
+        padding-top: 0px;
+	    padding-bottom: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .container{
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+   
+    .footer-link{
+        display: none;
+	}
+
+    .right-article .hashtag{
+        font-size: clamp(24px, 5vw, 120px);
+    }
+
+    .right-article .title{
+        font-size: clamp(28px, 5vw, 120px);
+    }
+
+    .title{
+        font-size: clamp(28px, 5vw, 120px); 
+    }
+    
+    .subtitle{
+        font-size: clamp(20px, 5vw, 120px);
+    }
+
+    .alysewang-mail{
+	    font-size: clamp(16px, 5vw, 28px);
+    }
+
+}

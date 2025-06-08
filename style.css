@@ -407,7 +407,7 @@ ul.pagination li a:hover {
 	.header-first .picture-right,
 	.header-first .picture-left{
 		width: 100%;
-		height: calc(100vh - 90px -180px);
+		height: calc(100vh - 90px - 180px);
 		
 	}
 
