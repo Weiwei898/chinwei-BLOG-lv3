@@ -1,0 +1,274 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Content-box (寬高設定作用在內容範圍)width 只算內容，不含 padding
+  Border-box （寬高設定作用在邊框外緣的範圍內）width 包含 padding 與 border*/
+/*   *：選擇所有元素。
+     *::before 和 *::after：選擇所有元素的 ::before 和 ::after 偽元素。    */
+/*改變所有盒模型計算方式，不會改變原有大小*/
+*,*::before,*::after{
+    box-sizing: border-box;
+    outline: solid 1px;/*測試範圍用*/
+}
+
+/*引入字型*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body{
+    font-family: "Noto Sans TC", sans-serif;/*改變全部字型符合設計稿*/
+	font-weight: 500;/*改變字體的粗細變化(字重)*/
+    line-height: 1.5;/*行高建議用倍數不要用百分比*/
+}
+
+img{
+    /*img預設為行內元素，會受到基準線對齊的影響*/
+    /*display: block;變成區塊元素可解決*/
+    vertical-align: middle;/*調整基線對齊的方式，副作用比較少*/
+    max-width:100% ;
+    height: auto;
+    
+}
+a{
+    /*行內元素，上下不會撐開，只會撐開左右*/
+    display: inline-block;
+    text-decoration: none;/*去連結底線*/  
+}
+
+.wrap{
+    margin: 0 auto;/*置中*/
+    max-width: 1920px;
+}
+
+.index {
+	display: flex;
+	justify-content: center;/*主軸線置中*/
+	align-items: center;/*交換軸置中*/
+	padding-top: 24px;
+	padding-right: 80px;
+	padding-left: 80px;
+	padding-bottom: 24px;
+	gap: 40px;
+}
+
+
+
+.index .nav-link {
+	text-decoration: none;/*去連結底線*/
+  	font-size: 28px;
+	line-height: 1.5;/*行距*/
+  	color: #000;
+  	font-weight: bold;/*加粗*/
+}
+
+.header {
+	display:flex;
+	/*flex-direction:row;主軸橫向由左到右預設值可不寫*/	
+	/*margin: 0 auto;區塊元素水平置中*/
+	width: 100%;
+	height: auto;
+	justify-content:center;/*主軸線置中*/
+	gap: 24px;
+}
+
+.picture-left{
+    width: 50%;
+}
+
+.header .right-article{
+    width: 50%;
+	display: flex;
+	flex-direction:column;/*主軸垂直由上到下*/
+	justify-content:center;/*主軸線置中*/
+	padding-top: 207px;
+	padding-bottom: 207px;
+}
+
+.right-text{
+    display: flex;
+    flex-direction:column;/*主軸垂直由上到下*/
+    gap: 4px;
+}
+
+
+.right-article .hashtag{
+    font-size: 24px;
+    color: #0027D5;
+    
+}
+
+.hashtag-body{
+    display: flex;
+    justify-content:start;
+    align-items:center;
+}
+
+.hashtag-button{
+    padding: 6px 12px;/*按鈕長寬*/
+    border-radius: 40px;/*圓角*/
+    background:blue;
+    color: white;
+    
+}
+
+.right-article .title{
+    font-weight: 700;/*字重*/
+    font-size: 28px;
+}
+
+.container {
+	max-width: 636px;/*最大寬度*/
+	margin: 0 auto;/*區塊元素水平置中*/
+	display: flex;
+    flex-direction:column;
+	justify-content: center;/*主軸置中*/
+	flex-wrap: wrap;/*元件多行*/
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.container .text{
+    padding-top: 12px;  
+}
+
+.article-layout{
+padding-bottom: 48px;
+}
+
+.article{
+    width: 100%;
+    display: flex;
+	flex-direction:column;/*主軸垂直由上到下*/
+    gap: 24px;
+    padding-bottom: 48px;
+}
+
+.article-picture img{
+    width: 100%;
+    aspect-ratio: 2 / 1;
+}
+
+
+.title{
+    font-weight: 700;/*字重*/
+    font-size: 28px;
+    color: #0027D5;
+}
+
+.subtitle{
+    font-weight: 700;/*字重*/
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.text{
+    padding-top: 8px;
+    
+}
+
+.article-layout .method-ol{
+    list-style:decimal;
+    margin-left: 1em;
+}
+
+.article-layout .method-ul{
+    list-style:disc;
+    margin-left: 1.5em;
+}
+
+.page-button{
+    display: flex;
+    justify-content:space-between;
+}
+
+.button-page{
+    padding:8px 16px;/*按鈕長寬*/
+    border-radius: 40px;/*圓角*/
+    border: 1px;
+    background: white;
+}
+.summary{ 
+    display: flex;
+    border-radius: 24px;/*圓角*/
+    background:#EDEDED;
+    padding: 24px;/*按鈕長寬*/
+}
+
+.summary p{
+    font-weight: 700;/*字重*/
+}
+
+.footer-link{
+	display: flex;
+	justify-content:space-between;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 312px;
+	padding-right: 312px;
+}
+
+.alysewang-mail{
+	font-size: 32px;
+	color: black;
+}
+
+.blog-button{
+	display: flex;
+}
+
+
+.footer-rights{
+	display: flex;
+	justify-content: center;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+
